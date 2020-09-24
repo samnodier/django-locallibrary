@@ -1,0 +1,42 @@
+{% extends "base_generic.html" %} {% block title %}
+<title>{{ book.title }} - LocalLibrary</title>
+{% endblock %} {% block content %}
+<h1>Title: {{ book.title }}</h1>
+
+<div class="book-detail-content">
+  <p>
+    <span class="strong-text">Author:</span>
+    <a href="{% url 'author-detail' book.author.pk %}">{{ book.author }}</a>
+  </p>
+  <!--A link to the detailed page of author-->
+  <p><span class="strong-text">Summary:</span> {{ book.summary }}</p>
+  <p><span class="strong-text">ISBN:</span> {{ book.isbn }}</p>
+  <p><span class="strong-text">Language:</span> {{ book.language }}</p>
+  <p><span class="strong-text">Genre:</span> {{ book.genre.all|join:", " }}</p>
+
+  <div class="copies">
+    <h3>Copies</h3>
+
+    {% for copy in book.bookinstance_set.all %}
+    <div>
+      <!-- <hr> -->
+      <p
+        class="{% if copy.status == 'a' %}text-success{% elif copy.status == 'm' %}text-danger{% else %}text-warning{% endif %}"
+      >
+        <span class="strong-text">Status:</span>
+        {{copy.get_status_display}}
+      </p>
+      {% if copy.status != 'a' %}
+      <p>
+        <span class="strong-text">Due to be returned:</span> {{ copy.due_back }}
+      </p>
+      {% endif %}
+      <p><span class="strong-text">Imprint:</span> {{ copy.imprint }}</p>
+      <p class="text-light">
+        <span class="strong-text">Id:</span> {{ copy.id }}
+      </p>
+    </div>
+    {% endfor%}
+  </div>
+</div>
+{% endblock %}

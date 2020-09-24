@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		{% block title %}
+		<title>Home - LocalLibrary</title>
+		{% endblock %} {% load static %}
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="{% static 'css/styles.css' %}"
+		/>
+		{% load static %}
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="{% static 'font-awesome/css/font-awesome.min.css' %}"
+		/>
+		{% load static %}
+		<link rel="shortcut icon" href="{% static 'images/book_icon.png' %}" type="image/x-icon"/>
+
+	</head>
+	<body>
+		<div class="scroll-to-top">
+			<span href="#" class="top">^</span>
+		</div>
+		<div class="container">
+			<header>
+				{% block header %}
+				<div class="header-top">
+					<div class="logo"><a href="{% url "locallibrary" %}">LocalLibrary</a></div>
+					<div class="user">
+						{% if user.is_authenticated %}
+						<a href="{{ user.get_absolute_url }}">
+						<div class="user-name">{{ user.last_name }} {{ user.first_name }}</div>
+						</a>
+						{% endif %}
+						<div class="avatar"><span class="fa fa-user no-user"></span></div>
+					</div>
+				</div>
+				{% endblock %}
+			</header>
+			<main>
+				<nav class="nav">
+					{% block sidebar_nav %}
+					<div class="nav-bars">
+						<div class="fa fa-bars"></div>
+					</div>
+					<ul id="nav-list">
+						<li><a href="{% url 'locallibrary' %}">Home</a></li>
+						<li><a href="{% url 'books' %}">Books</a></li>
+						<li><a href="{% url 'authors' %}">Authors</a></li>
+						<li><a href="{% url 'contact' %}">Contact</a></li>
+						<li><a href="{% url 'about' %}">About</a></li>
+					</ul>
+					<div class="btn-container">
+						<a href="{% url 'logout' %}">
+							<button class="btn btn-signout">
+								Sign Out
+							</button>
+						</a>
+					</div>
+					{% endblock %}
+				</nav>
+				<div class="main-content">
+					{% block content %}
+					<!-- This is the placeholder for the content -->
+					{% endblock %}
+				</div>
+				{% block pagination %} {% if is_paginated %}
+				<div class="pagination">
+					<span class="pagelinks">
+						{% if page_obj.has_previous %}
+						<a
+							href="{{ request.path }}?page={{ page_obj.previous_page_number }}"
+							><button class="pag-btn">
+								<span class="fa fa-angle-left"></span></button
+						></a>
+						{% endif %}
+						<button class="pag-btn">
+							{{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+						</button>
+						{% if page_obj.has_next %}
+						<a href="{{ request.path }}?page={{ page_obj.next_page_number }}"
+							><button class="pag-btn">
+								<span class="fa fa-angle-right"></span></button
+						></a>
+						{% endif %}
+					</span>
+				</div>
+				{% endif %} {% endblock %}
+			</main>
+			<footer>
+				<!-- {% block footer %} -->
+				<p>&copy LocalLibrary 2020.</p>
+				<!-- {% endblock %} -->
+			</footer>
+		</div>
+
+		{% load static %}
+		<script src="{% static 'js/jquery-3.5.1.js' %}"></script>
+		<script src="{% static 'js/main.js' %}"></script>
+	</body>
+</html>

@@ -1,0 +1,18 @@
+{% extends "base_generic.html" %} {% block title %}
+<title>Authors - LocalLibrary</title>
+{% endblock %} {% block content %}
+<div class="author-list">
+  <h1>Author List</h1>
+  {% if author_list %}
+  <ul>
+    {% for author in author_list%}
+    <li>
+      <a href="{{ author.get_absolute_url }}"
+        >{{ author.last_name }} {{ author.first_name }}</a
+      >
+    </li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "base_generic.html" %}
+{% block title %}
+	<title>Renew Book - LocalLibrary</title>
+{% endblock title %}
+{% block content %}
+	<h1>Renew Book: {{ book_instance.book.title }}</h1>
+	<p><span class="strong">Borrower</span> {{ book_instance.borrower }}</p>
+	<p>{% if book_instance.is_overdue %}
+		class="text-danger"
+	{% endif %}<span class="strong">Due Date</span>{{ book_instance.due_back }}</p>
+	<form action="" method="POST">
+		{% csrf_token %}
+		<ul>
+			{{ form.as_ul }}
+		</ul>
+		<button type="submit">Renew</button>
+	</form>
+{% endblock content %}

@@ -1,0 +1,18 @@
+{% extends "base_generic.html" %} {% block title %}
+<title>{{ user.last_name }} {{ user.first_name }} - LocalLibrary</title>
+{% endblock title %} {% block content %}
+<div class="userbox">
+	<h1>{{ user.get_full_name }}</h1>
+	<div class="details">
+		<p><span class="strong-text">First Name:</span> {{ user.first_name }}</p>
+		<p><span class="strong-text">Last Name:</span> {{ user.last_name }}</p>
+		<p><span class="strong-text">Email:</span> {{ user }}</p>
+		<p>
+			<span class="strong-text">Date of Birth:</span> {{ user.date_of_birth }}
+		</p>
+		<div class='user-edit'>
+			<a href="{% url 'edit-profile' user.id %}" class="btn btn-profile-edit">Edit Profile</a>
+		</div>
+	</div>
+</div>
+{% endblock content %}

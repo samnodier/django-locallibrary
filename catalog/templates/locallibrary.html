@@ -1,0 +1,37 @@
+{% extends "base_generic.html" %} {% block content %}
+<div class="header-image"></div>
+<div class="welcome">
+	<h1>Local Library</h1>
+	<p>Welcome to the LocalLibrary</p>
+	<p>A best place to read books online and download for offline use.</p>
+	<div class="status-btns">
+		<div class="status-btn">
+			<a href="#status" class="fa fa-long-arrow-down"></a>
+		</div>
+		<button class="btn read-now">
+			<a href="{% url 'books' %}">Read Now</a>
+		</button>
+	</div>
+</div>
+<div class="status" id="status">
+	<div class="left-block">
+		{% load static %}
+		<img src="{% static './images/Books.jpg' %}" alt="Library Books" />
+	</div>
+	<div class="right-block">
+		<h3>Local Library Status</h3>
+		<!-- 	<p>Currently the status of books in the library is as follows:</p>
+			-->
+		<ul>
+			<li>{{ num_books }} Books</li>
+			<li>{{ num_languages }} Languages</li>
+			<li>{{ num_instances }} Copies</li>
+			<li>{{ num_instances_available }} Copies are available</li>
+			<li>{{ num_authors }} Authors</li>
+		</ul>
+	</div>
+</div>
+<div class="session">
+	<p>Your visits: {{ num_visits }}.</p>
+</div>
+{% endblock %}

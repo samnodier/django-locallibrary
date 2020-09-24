@@ -1,0 +1,115 @@
+.userbox {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 30rem;
+	flex: 1;
+	flex-shrink: initial;
+	margin: 0 auto;
+	border: 1px solid rgba(0,0,0,.2);
+	font-size: 1.2rem;
+}
+
+.userbox .details {
+	background: rgba(0,0,0,.1);
+	width: 100%;
+	padding: 3rem;
+	display:flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.user-edit {
+	width:100%;
+	display: flex;
+	align-items:center;
+	justify-content: center;
+}
+
+.btn-profile-edit {
+	background: linear-gradient(45deg, rgb(120, 108, 91), rgb(121, 63,13));
+}
+
+a.btn.btn-profile-edit {
+	color: rgb(249, 251, 251);
+}
+
+.edit-profile-title {
+	color: rgb(249, 251, 251);
+}
+
+.edit-profile-form {
+	display:flex;
+	flex-direction: column;
+	align-items:center;
+	justify-content: center;
+	background: -webkit-linear-gradient(
+		45deg,
+		rgb(120, 108, 91),
+		rgb(121, 63, 13)
+	);
+	width: 25rem;
+	margin: 0 auto;
+	padding: 2rem 0;
+	border-radius: 10px;
+}
+
+.edit-profile-form form li, .edit-profile-form button {
+	width: 100%;
+	padding: 0.3rem 0;
+}
+
+.edit-profile-form form {
+	list-style:none;
+	width: 100%;
+	padding: 0 3rem 3rem;
+}
+
+input {
+	-webkit-appearance: none;
+	appearance:none;
+	outline: none;
+	font-size: 1.1rem;
+	width: 100%;
+	height: 3rem;
+	border: none;
+	border-bottom: 2px solid rgb(160, 161, 140);
+	padding-left: 5px;
+	font-family: product sans, sans-serif;
+	background: none;
+}
+
+input:-internal-autofill-selected {
+	background: none !important;
+	color: inherit !important;
+	font-family: Product Sans, sans-serif;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+	background: none;
+	-webkit-text-fill-color: rgb(255, 255, 255);
+	-webkit-box-shadow: none;
+}
+
+.edit-profile-form .btn {
+	-webkit-appearance: none;
+	outline: none;
+	margin: 1rem 0;
+	width: 100%;
+	height: 2.5rem;
+	text-transform: uppercase;
+	font-family: Product Sans, sans-serif;
+	font-size: 1.3rem;
+	border: none;
+	border-radius: 250px;
+	cursor: pointer;
+}

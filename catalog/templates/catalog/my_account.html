@@ -1,0 +1,14 @@
+{% extends "base_generic.html" %}
+{% block title %}
+    <title>Edit Profile - LocalLibrary</title>
+{% endblock title %}
+
+{% block content %}
+    <div class="edit-profile-form">
+    	<h1 class="edit-profile-title">Edit Profile</h1>
+		<form action="" method="post">
+			{% csrf_token %} {{ form.as_ul }}
+			<button type="submit" class="btn btn-edit-profile">Save</button>
+		</form>
+    </div>
+{% endblock content %}

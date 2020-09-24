@@ -1,0 +1,387 @@
+@import "reset.css";
+
+* {
+	box-sizing: border-box;
+}
+
+a {
+	text-decoration: none;
+	color: rgb(58, 74, 150);
+}
+
+a:visited {
+	color: rgb(147, 67, 0);
+}
+
+a:focus,
+a:focus-within {
+	outline: none;
+	text-decoration: underline;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: Zilla Slab, Product Sans, sans-serif;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	min-width: 320px;
+	max-width: 1500px;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.container {
+	width: inherit;
+	height: inherit;
+	margin: 0;
+	padding: 0;
+	position: relative;
+	display: flex;
+	-webkit-flex-direction: column;
+	-moz-flex-direction: column;
+	-ms-flex-direction: column;
+	-o-flex-direction: column;
+	flex-direction: column;
+	-ms-align-items: center;
+	align-items: center;
+	justify-content: center;
+}
+
+.background-image {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: rgb(150, 65, 0) url("../images/library.jpg") no-repeat center
+		center / cover;
+	overflow-x: hidden;
+	z-index: -2;
+	filter: brightness(0.25);
+}
+
+.header h1 {
+	text-align: center;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	font-family: Zilla Slab, sans-serif;
+	font-size: 3rem;
+	color: rgb(249, 251, 251);
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+.buttons {
+	width: inherit;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	margin-top: 5rem;
+}
+
+.buttons a:focus,
+.buttons a:focus-within {
+	outline: none;
+	text-decoration: underline;
+}
+
+.index-btn {
+	text-align: center;
+	border: 2px solid rgb(249, 251, 251);
+	padding: 0.7rem 2.3rem;
+	font-size: 1.3rem;
+	font-weight: 300;
+	letter-spacing: 1px;
+	font-family: Product Sans, Roboto, sans-serif;
+	color: rgb(249, 251, 251);
+	border-radius: 250px;
+	margin: 1rem;
+	text-transform: uppercase;
+}
+
+#login {
+	background-color: rgb(249, 251, 251);
+	color: rgb(0, 0, 0);
+}
+
+@media screen and (max-width: 425px) {
+	html {
+		font-size: 14px;
+	}
+}
+
+@media screen and (max-width: 350px) {
+	html {
+		font-size: 12px;
+	}
+}
+
+/* Login Page */
+
+main {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+	position: relative;
+	padding: 1rem 0;
+}
+
+.login-form,
+.signup-form,
+.reset-form,
+.reset-confirm {
+	background: rgba(249, 251, 251, 0.8);
+	/*padding: 1.5rem 0;*/
+	border: none;
+	border-radius: 10px;
+}
+
+h1.login-title,
+h1.reset-title {
+	margin: 0;
+	font-size: 2rem;
+}
+
+.login-title,
+.reset-title {
+	font-size: 2.5rem;
+	font-family: "Product Sans", sans-serif;
+	font-weight: 900;
+	text-align: center;
+	background: -webkit-linear-gradient(
+		45deg,
+		rgb(120, 108, 91),
+		rgb(121, 63, 13)
+	);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+form,
+.alt {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	padding: 0 3rem;
+	font-family: Product Sans, sans-serif;
+	list-style: none;
+}
+
+form > li > ul {
+	padding: 0;
+	list-style: none;
+}
+
+.login-form > *,
+.signup-form > *,
+.reset-form > *,
+.reset-confirm > * {
+	padding-top: 2rem;
+}
+
+.login-form > *:last-child,
+.signup-form > *:last-child,
+.reset-form > *:last-child,
+.reset-confirm > *:last-child {
+	padding-bottom: 2rem;
+}
+
+.alt {
+	padding-top: 0 !important;
+}
+
+form > li,
+form > button {
+	width: 100%;
+	padding: 0.3rem 0;
+}
+
+label {
+	width: inherit;
+	height: 5rem;
+	/* background: blue; */
+	display: block;
+	margin: 0.5rem;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: center;
+	position: relative;
+}
+
+.uname,
+.pword {
+	font-size: 1rem;
+}
+
+input {
+	-webkit-appearance: none;
+	appearance:none;
+	outline: none;
+	font-size: 1.1rem;
+	width: 100%;
+	height: 3rem;
+	border: none;
+	border-bottom: 2px solid rgb(160, 161, 140);
+	padding-left: 5px;
+	font-family: product sans, sans-serif;
+	background: none;
+}
+
+input:-internal-autofill-selected {
+	background: none !important;
+	color: inherit !important;
+	font-family: Product Sans, sans-serif;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+	background: none;
+	-webkit-text-fill-color: rgb(249, 251, 251);
+	-webkit-box-shadow: none;
+}
+
+.fa-user,
+.fa-lock {
+	position: absolute;
+	font-size: 2rem !important;
+	top: 0;
+	transform: translateY(100%);
+	color: rgb(160, 161, 140);
+}
+
+.forgot-text {
+	align-self: flex-end;
+	cursor: pointer;
+}
+
+.login-form .btn,
+.signup-form .btn,
+.reset-form .btn,
+.reset-confirm .btn {
+	-webkit-appearance: none;
+	outline: none;
+	margin: 1rem 0;
+	width: inherit;
+	height: 2.5rem;
+	background: -webkit-linear-gradient(
+		0deg,
+		rgb(120, 108, 91),
+		rgb(121, 63, 13)
+	);
+	text-transform: uppercase;
+	font-family: Product Sans, sans-serif;
+	font-size: 1.3rem;
+	color: rgb(255, 255, 255);
+	border: none;
+	border-radius: 250px;
+	cursor: pointer;
+}
+
+.alt a {
+	width: 100%;
+}
+
+/*.no-account {
+	margin: -1.5rem 0;
+}
+*/
+@media screen and (max-width: 1501px) {
+	.login-title {
+		font-size: 2rem;
+	}
+
+	/*	.login-form {
+		height: 35rem;
+	}
+*/
+	label {
+		height: 3.5rem;
+	}
+
+	.uname,
+	.pword {
+		font-size: 0.9rem;
+	}
+
+	.fa-user,
+	.fa-lock {
+		font-size: 1.5rem !important;
+	}
+}
+
+@media screen and (max-width: 1350px) {
+	.login-header {
+		font-size: 2rem;
+	}
+
+	.login-title {
+		font-size: 2rem;
+	}
+
+	/*	.login-form {
+		padding-top: -2rem;
+		width: 25rem;
+		height: 30rem;
+	}*/
+
+	.forgot-text {
+		/*margin-bottom: -1rem;*/
+		font-size: 0.9rem;
+	}
+
+	.no-account {
+		font-size: 0.9rem;
+	}
+
+	.login-form .btn {
+		/*margin: 2.5rem;*/
+		height: 2.5rem;
+	}
+}
+
+@media screen and (max-width: 400px) {
+	.login-form {
+		width: 90%;
+	}
+
+	form {
+		padding: 0 1rem;
+	}
+
+	input {
+		font-size: 1rem;
+	}
+
+	.login-form .btn {
+		font-size: 1rem;
+		margin: 2rem;
+		height: 2rem;
+	}
+}

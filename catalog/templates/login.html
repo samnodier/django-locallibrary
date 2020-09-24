@@ -1,0 +1,23 @@
+{% extends "landing_generic.html" %} {% block title %}
+<title>Login - LocalLibrary</title>
+{% endblock title %} {% block content %}
+<main>
+	<div class="login-form">
+		<h1 class="login-title">Login</h1>
+		<form method="post" action="">
+			{% csrf_token %} {{ form.as_ul}}
+			<p class="forgot-text">
+				<a href="{% url 'password_reset' %}">Forgot password?</a>
+			</p>
+			<button type="submit" class="btn login">Login</button>
+			<input type="hidden" name="next" value="{{ next }}" />
+		</form>
+		<div class="alt">
+			<p class="no-account">Don't have account?</p>
+			<a href="{% url 'signup' %}">
+				<button class="btn signup-alt">Signup</button>
+			</a>
+		</div>
+	</div>
+</main>
+{% endblock content %}

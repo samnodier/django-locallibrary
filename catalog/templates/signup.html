@@ -1,0 +1,17 @@
+{% extends "landing_generic.html" %} {% block title %}
+<title>Signup - LocalLibrary</title>
+{% endblock title %} {% block content %}
+<main>
+	<div class="signup-form">
+		<h1 class="login-title">SignUp</h1>
+		<form method="POST">
+			{% csrf_token %} {{ form.as_ul }}
+			<button type="submit" class="btn signup">SignUp</button>
+		</form>
+		<div class="alt">
+			<p class="no-account">Already have account?</p>
+			<a href="{% url "login" %}"><button class="btn login-alt">Login</button></a>
+		</div>
+	</div>
+</main>
+{% endblock content %}

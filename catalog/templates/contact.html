@@ -1,0 +1,16 @@
+{% extends "base_generic.html" %}
+{% block title %}
+    <title>Contact Us - LocalLibrary</title>
+{% endblock title %}
+{% block content %}
+<div class="header-image"></div>
+<div class="contact">
+	<h1>Contact Us</h1>
+	<form action="" method="POST">
+		{% csrf_token %}
+		{{ form.as_ul }}
+		<button type="submit" class="btn btn-contact">Submit</button>
+		<p class="phone">Call Us: <span class="phone-number">+1 555 5555</span></p>
+	</form>
+</div>
+{% endblock content %}

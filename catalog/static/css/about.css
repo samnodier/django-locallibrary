@@ -1,0 +1,40 @@
+.about {
+    padding: 4rem;
+    position: relative;
+    z-index: 3;
+    color: rgb(0,0,0);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    font-size: 1.3rem;
+    font-family: Product Sans, sans-serif;
+    text-align: center;
+}
+
+.background p span {
+    display: block;
+    background: -webkit-linear-gradient(
+ 45deg,
+ rgb(120, 108, 91),
+ rgb(121, 63, 13)
+ );
+    padding: 5px 0;
+}
+
+.about p{
+	line-height: 25px;
+}
+
+.following .sm-icons {
+    display:flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+
+.following .fa {
+    font-size: 3rem;
+}
