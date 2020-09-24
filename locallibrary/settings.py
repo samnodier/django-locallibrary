@@ -31,8 +31,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'q5p1x575u1ym%06+2+ey%a^znn_^u3
 DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'Falsek'
 
 ALLOWED_HOSTS = [
-    listen 80 default_server;
-    return 444;
+    '10.42.0.15'
 ]
 
 
@@ -52,6 +51,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     # 'livesync.core.middleware.DjangoLiveSyncMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -132,6 +132,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+# The absolute path to the directory where collectstatic will collect static files for deployment
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
 STATICFILES_DIRS = [
     BASE_DIR / 'static',
 ]
@@ -145,3 +148,8 @@ AUTH_USER_MODEL = 'catalog.MyUser'
 # To allow testing, this line logs any emails sent to the console(so you can copy the password reset link from the console.)
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 # EMAIL_FILE_PATH = 'C:/Users/user/Hasin/Projects/Django/locallibrary_app_messages/messages.txt'
+
+# Reducing the size of the static files
+# Simplified static file serving
+# https://warehouse.python.org/project/whitenoise/
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
