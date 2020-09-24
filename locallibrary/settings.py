@@ -14,7 +14,10 @@ from pathlib import Path
 import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
+# BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
+
+# Heroku specified base dir
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__path)))
 
 
 # Quick-start development settings - unsuitable for production
@@ -125,18 +128,18 @@ USE_L10N = True
 
 USE_TZ = True
 
+# The absolute path to the directory where collectstatic will collect static files for deployment
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
 
-# The absolute path to the directory where collectstatic will collect static files for deployment
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-STATICFILES_DIRS = [
-    BASE_DIR / 'static',
-]
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static')
+)
 
 LOGIN_URL = '/catalog/login'
 
