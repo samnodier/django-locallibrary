@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 import os
+import django_heroku
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 # BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
@@ -31,10 +32,9 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'q5p1x575u1ym%06+2+ey%a^znn_^u3
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = True
 
-DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'Falsek'
+DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
-ALLOWED_HOSTS = [
-]
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -138,7 +138,7 @@ STATIC_URL = '/static/'
 
 
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static')
+    os.path.join(BASE_DIR, 'static'),
 )
 
 LOGIN_URL = '/catalog/login'
@@ -155,3 +155,5 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 # Simplified static file serving
 # https://warehouse.python.org/project/whitenoise/
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+django_heroku.settings(locals())
