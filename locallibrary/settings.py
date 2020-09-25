@@ -10,7 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
-import django_heroku
+# import django_heroku
 from pathlib import Path
 import dj_database_url
 import os
@@ -159,4 +159,4 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 # https://warehouse.python.org/project/whitenoise/
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-django_heroku.settings(locals())
+# django_heroku.settings(locals())
