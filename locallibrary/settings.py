@@ -18,7 +18,7 @@ import os
 # BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 
 # Heroku specified base dir
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__path)))
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 # Quick-start development settings - unsuitable for production
