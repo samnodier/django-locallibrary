@@ -158,5 +158,4 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 # Simplified static file serving
 # https://warehouse.python.org/project/whitenoise/
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
 # django_heroku.settings(locals())
