@@ -11,7 +11,7 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.AddField(
-            model_name='MyUser',
+            model_name='myuser',
             name='is_worker',
             field=models.BooleanField(default=False),
         ),
