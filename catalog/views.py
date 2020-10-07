@@ -179,7 +179,7 @@ def edit_profile_view(request, pk):
             # Redirect to the profile URL
             return HttpResponseRedirect(reverse('user', args=[pk]))
 
-    # If this is the GET (or any other method) create the defaut form
+    # If this is the GET (or any other method) create the default form
     else:
         first_name = user.first_name;
         last_name = user.last_name;
@@ -197,7 +197,7 @@ def edit_profile_view(request, pk):
         'user': user,
     }
 
-    return render(request, 'catalog/user_edit_profile.html', context = context)
+    return render(request, 'catalog/my_account.html', context = context)
 
 
 # Contact view
@@ -252,7 +252,7 @@ def about(request):
     return render (request, 'about.html', context = context)
 
 
-@permission_required('catalog.is_worker')
+@permission_required('catalog.is_admin')
 def renew_book_librarian(request, id):
     book_instance = get_object_or_404(BookInstance, pk=pk)
 

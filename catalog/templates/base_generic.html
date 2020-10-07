@@ -45,10 +45,11 @@
 			<main>
 				<nav class="nav">
 					{% block sidebar_nav %}
-					<div class="nav-bars">
+					<div class="nav-bars off" aria-hidden="true">
 						<div class="fa fa-bars"></div>
+						<div class="fa fa-times hide"></div>
 					</div>
-					<ul id="nav-list">
+					<ul class="nav-list">
 						<li><a href="{% url 'locallibrary' %}">Home</a></li>
 						<li><a href="{% url 'books' %}">Books</a></li>
 						<li><a href="{% url 'authors' %}">Authors</a></li>
@@ -100,7 +101,6 @@
 		</div>
 
 		{% load static %}
-		<script src="{% static 'js/jquery-3.5.1.js' %}"></script>
 		<script src="{% static 'js/main.js' %}"></script>
 	</body>
 </html>

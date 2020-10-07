@@ -176,12 +176,17 @@ main {
 .nav-bars {
 	font-size: 1.6rem;
 	color: rgb(249, 251, 251);
-	position: absolute;
 	top: 20px;
 	left: 50%;
 	transform: translateX(-50%);
 	visibility: hidden;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
+
+
 .nav {
 	width: 8rem;
 	position: fixed;
@@ -194,13 +199,14 @@ main {
 	color: white;
 }
 
-.nav > ul {
+.nav-list {
 	width: 100%;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	text-align: center;
-	margin: 2rem 0 4rem;
+	margin: 4rem 0 4rem;
+	transition: .7s opacity ease;
 }
 
 .nav > ul > li {
@@ -216,6 +222,7 @@ main {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	transition: .7s opacity ease;
 }
 
 .btn {
@@ -458,6 +465,28 @@ footer > p {
 	.nav-bars {
 		visibility: visible;
 	}
+
+	.nav-list, .btn-container {
+		opacity: 0;
+	}
+
+	.hide {
+		opacity: 0;
+	}
+
+	.show {
+		opacity: 1;
+	}
+
+	.fa-bars, .fa-times {
+		position: absolute;
+		transition: 1s visibility ease;
+	}
+
+	.toggle-on {
+		opacity: 1;
+	}
+
 	footer {
 		font-size: 0.95rem;
 	}

@@ -61,7 +61,6 @@ class UserChangeForm(forms.ModelForm):
             'date_of_birth',
             'password',
             'is_active',
-            'is_worker',
             'is_admin',
         )
 
@@ -72,7 +71,7 @@ class UserChangeForm(forms.ModelForm):
         return self.initial['password']
 
 
-class UserAdmin(BaseUserAdmin):
+class MyUserAdmin(BaseUserAdmin):
     # The forms to add and change user instances
     form = UserChangeForm
     add_form = UserCreationForm
@@ -85,17 +84,16 @@ class UserAdmin(BaseUserAdmin):
         'first_name',
         'email',
         'date_of_birth',
-        'is_worker',
         'is_admin',
     )
-    list_filter = ('is_worker',)
+    list_filter = ('is_admin',)
 
     fieldsets = (
         (
             None, {
                 'fields': (
                     'email',
-                    'password'
+                    'password',
                 )
             }
         ),
@@ -110,12 +108,9 @@ class UserAdmin(BaseUserAdmin):
         ),
         (
             'Permissions', {
-                'fields': (
-                    'is_worker',
-                    'is_admin',
-                )
+                'fields': ('is_admin',)
             }
-        )
+        ),
     )
 
     # add_fieldsets is not standard ModelAdmin attribute. UserAdmin
@@ -130,10 +125,10 @@ class UserAdmin(BaseUserAdmin):
                     'email',
                     'date_of_birth',
                     'password1',
-                    'password2',
+                    'password2'
                 )
             }
-        )
+        ),
     )
 
     search_fields = ('email',)
@@ -142,7 +137,7 @@ class UserAdmin(BaseUserAdmin):
 
 
 # Now register the new UserAdmin...
-admin.site.register(MyUser, UserAdmin)
+admin.site.register(MyUser, MyUserAdmin)
 # ... and, since we're not using Django's built-in permissions,
 # unregister the Group model from the admin.
 admin.site.unregister(Group)
