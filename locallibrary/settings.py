@@ -141,7 +141,7 @@ STATIC_URL = '/static/'
 
 
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
+    os.path.join(BASE_DIR, 'catalog/static'),
 )
 
 LOGIN_URL = '/catalog/login'

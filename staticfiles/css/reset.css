@@ -1,0 +1,8 @@
+.reset-done,
+.reset-confirm {
+	width: 50%;
+	font-weight: 600;
+	font-size: 1.2rem;
+	font-family: Product Sans, sans-serif;
+	color: rgb(249, 251, 251);
+}

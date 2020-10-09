@@ -1,0 +1,43 @@
+/*=============================*/
+/*Author List Section*/
+.author-list > h1 {
+  font-size: 2.5rem;
+}
+.author-list > ul > li {
+  padding: 1.5rem 0 1.5rem 0.5rem;
+  border-top: 1px solid rgba(0, 0, 9, 0.5);
+}
+
+.author-list > ul > li:nth-child(2n + 1) {
+  background: rgba(0, 0, 9, 0.1);
+}
+
+/* ===================================== */
+/* Author detailed view */
+
+.books {
+  margin-inline-start: 3rem;
+}
+
+.books h3 {
+  font-size: 1.5rem;
+}
+
+.books div {
+  border-top: 1px solid rgba(0, 0, 9, 0.3);
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.books div:last-child {
+  border-bottom: 1px solid rgba(0, 0, 9, 0.3);
+}
+
+.books div:nth-child(even) {
+  background-color: rgba(0, 0, 9, 0.1);
+}
+
+.books div p:last-child {
+  margin-block-end: 0;
+  padding-block-end: 1em;
+}
